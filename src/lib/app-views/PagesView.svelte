@@ -30,26 +30,46 @@
   }
 </script>
 <div class="pages-view">
-  <div class="main-page__setting">
+  <div class="pages-view__setting">
     s
   </div>
   <!-- <SettingView /> -->
-  <svelte:component this={pages[activePage].component}></svelte:component>
-  <NavBar on:page={setActivePage} pages={pages} />
+  <div class="pages-view__content"><svelte:component this={pages[activePage].component}></svelte:component></div>
+  
+  <div class="pages-view__navbar">
+    <NavBar on:page={setActivePage} pages={pages} />
+  </div>
 </div>
 
-<style>
+<style lang="scss">
   .pages-view {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: stretch; */
-    /* align-items: center; */
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 50px; 
+    grid-template-rows: 50px 2fr 0.5fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". settings"
+      "content content"
+      "navbar navbar"; 
+
+    &__content {
+      grid-area: content;
+    }
+    
+    &__setting {
+      margin: 4px;
+      grid-area: settings;
+      /* position: absolute; */
+      background-color: wheat;
+      border-radius: 100%;
+      // align-self: flex-end;
+    }
+    &__navbar {
+      grid-area: navbar;
+      // justify-self: flex-end;
+      // background-color: blue;
+    }
   }
-  .main-page__setting {
-    /* position: absolute; */
-    background-color: wheat;
-    border-radius: 100%;
-    align-self: flex-end;
-  }
+  
 </style>

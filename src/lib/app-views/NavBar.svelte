@@ -11,15 +11,20 @@ function emitPage(page) {
 
 <div class="nav-bar">
   {#each Object.keys(pages) as pageKey (pageKey)}
-  <button on:click={() => emitPage(pageKey)}>
+  <button class="nav-bar__btn" on:click={() => emitPage(pageKey)}>
     {pages[pageKey].title}
   </button>
   {/each}
 </div>
 
-<style>
+<style lang="scss">
 .nav-bar {
   display: flex;
   justify-content: stretch;
+  height: 100%;
+
+  &__btn {
+    width: calc(100% / 3);
+  }
 }
 </style>

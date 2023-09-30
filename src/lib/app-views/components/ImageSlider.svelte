@@ -29,13 +29,35 @@
     activeImage = sportTypes[activeIndex];
   }
 
+  function touchmove(event) {
+    console.log(event);
+  }
+
+  
+
 </script>
 
-<div class="image-slider">
-  <button on:click={() => activeIndex -= 1}>left</button>
+<div class="slider">
+  <div class="slider-list">
+    <div class="slider-track">
+      <div class="slide">1</div>
+      <div class="slide">2</div>
+      <div class="slide">3</div>
+      <div class="slide">4</div>
+      <div class="slide">5</div>
+    </div>
+  </div>
+  <div class="slider-arrows">
+    <button type="button" class="prev">&larr;</button>
+    <button type="button" class="next">&rarr;</button>
+  </div>
+</div>
+
+<!-- <div class="image-slider" on:touchmove={touchmove}>
+  <button  on:click={() => activeIndex -= 1}>left</button>
   {@html activeImage.imageSvg}
   <button on:click={() => activeIndex += 1}>right</button>
-</div>
+</div> -->
 
 <style>
   .image-slider {
@@ -44,4 +66,69 @@
     justify-content: space-between;
     width: 100%;
   }
+
+  * {
+  box-sizing: border-box;
+}
+.slider {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto 0;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.slider img {
+  poiner-events: none;
+}
+
+.slider-list {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.slider-list.grab {
+  cursor: grab;
+}
+
+.slider-list.grabbing{
+  cursor: grabbing;
+}
+
+.slider-track {
+  display: flex;
+}
+
+.slide {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+}
+
+.slider-arrows {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.next,
+.prev {
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next.disabled,
+.prev.disabled {
+  opacity: .25;
+  pointer-events: none;
+}
 </style>
