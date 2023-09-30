@@ -1,0 +1,74 @@
+{
+    "userData": {
+        "user": {
+            "name": "Roman",
+            "type": "stuff",
+            "email": "test@mail.ru"
+        },
+        "currentScores": {
+            "sportScores": {
+                "sportType1": 22,
+                "sportType2": 40,
+                "sportType3": 8
+            },
+            "money": 1000
+            
+        },
+        "prevMonthScores": {
+            "sportScores": {
+                "sportType1": 48,
+                "sportType2": 10,
+                "sportType3": 63
+            },
+            "money": 200
+        },
+        "currentFund": "fundId2"
+    },
+    "raitingData": {
+        "branchRating": [
+            {
+                "name": "Игорь",
+                "scoreMoney": 2000
+            },
+            {
+                "name": "Вова",
+                "scoreMoney": 526
+            },
+            {
+                "name": "Владик",
+                "scoreMoney": 663463
+            }
+        ],
+        "companyRating": [
+            {
+                "name": "Олегтт",
+                "scoreMoney": 533252
+            },
+            {
+                "name": "Я",
+                "scoreMoney": 543
+            }
+        ]
+    },
+    "appData": {
+        "sportsData": {
+            "sportType1": {
+                "name": "Лыжи"
+            },
+            "sportType2": {
+                "name": "Конььки"
+            },
+            "sportType3": {
+                "name": "бег"
+            }
+        },
+        "funds": {
+            "fundId1": {
+                "name": "Дари жизнь"
+            },
+            "fundId2": {
+                "name": "Убери стариков"
+            }
+        }
+    }
+}
