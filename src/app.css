@@ -79,8 +79,12 @@ button:focus-visible {
   }
 } */
 
+@import url("https://fonts.cdnfonts.com/css/pt-root-ui");
+
 :root {
-  --background: red;
+  --background-color: #fcfefa;
+  --primary-color: #22597b;
+  --second-color:  #c9dcfc;
 }
 
 
@@ -90,12 +94,15 @@ button:focus-visible {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: pt root ui;
+  font-size: 20px;
 }
 
 
 html, body{
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter; */
+  
 
-  background-color: var(--background);
+  background-color: var(--background-color);
   scroll-behavior: smooth;
 }
