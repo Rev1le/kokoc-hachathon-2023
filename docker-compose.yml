@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+    svelte:
+        build: .
+        ports: 
+            - "88:5173"
