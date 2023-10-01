@@ -22,7 +22,8 @@ function emitPage(page) {
   display: flex;
   justify-content: stretch;
   height: 100%;
-
+  background-color: #C8C8C8;
+  border-radius: 20px 20px 0 0;
   // &:first-child {
   //   background-color: yellow;
   // }

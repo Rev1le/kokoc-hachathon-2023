@@ -3,5 +3,9 @@ version: '3.9'
 services:
     svelte:
         build: .
+        context: ../.
         ports: 
             - "88:5173"
+        volumes:
+            - .:/app
+        # command: [ npm, run, dev]

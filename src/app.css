@@ -2,11 +2,12 @@
 
 @import url("https://fonts.cdnfonts.com/css/pt-root-ui");
 
-:root {
+/* :root {
   --background-color: #fcfefa;
-  --primary-color: #22597b;
-  --second-color:  #c9dcfc;
-}
+  --primary-color: #C8DDFC ;
+  --second-color:  #99A3AC;
+  --light-color: #1A6E9D;
+} */
 
 
 *, *::after, *::before {
