@@ -47,7 +47,7 @@
   <div class="image-slider__swipe">
     <Swipe {...swipeConfig} on:change={(event) => active_item = event.detail.active_item}>
       {#each sportTypes as sportType}
-      <SwipeItem style="background-color: black;">
+      <SwipeItem>
         <div class="image-slider__block">
           <img class="image-slider__elem" src="{sportType.imageSvg}" alt="">
         </div> 
