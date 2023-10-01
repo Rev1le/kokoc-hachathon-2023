@@ -1,42 +1,58 @@
 
 <script>
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+  export let pages = {};
+
+
   let email = '';
   let pass = '';
 
   function sendLoginData() {
     const reqOptions = {
       params: {
-        email: email,
-        pass: pass
+        email,
+        pass
       }
     };
 
     console.log(reqOptions);
+
+    const response = {'IamResponse': 2222}
+    dispatch('authResult', response);
   }
 </script>
 
-<div class="login-view">
-  <input class="login-view__email-inp" bind:value={email} placeholder="email">
-  <input class="login-view__pass-inp" bind:value={pass} placeholder="pass">
-  <button on:click={sendLoginData} class="login-view__login-btn">Войти</button>
-</div>
+<input class="login-view__email-inp" bind:value={email} placeholder="email">
+<input class="login-view__pass-inp" bind:value={pass} placeholder="pass">
+<button on:click={sendLoginData} class="login-view__login-btn">Войти</button>
 
 <style lang="scss">
-.login-view {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  &__login-btn {
-
+  textarea:focus, input:focus{
+    outline: none;
   }
 
-  &__email-inp {
+  @mixin login-inp {
+    border-radius: 4px;
+    border-width: 0px;
+    padding: 2px;
+    color: rgb(18, 22, 64);
   }
 
-  &__pass-inp {
+  .login-view {
 
+    &__login-btn {
+      border-radius: 5px;
+      margin: 4px;
+    }
+
+    &__email-inp {
+      @include login-inp;
+    }
+
+    &__pass-inp {
+      @include login-inp;
+    }
   }
-}
 </style>
